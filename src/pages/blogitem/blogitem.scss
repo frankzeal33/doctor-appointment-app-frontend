@@ -1,0 +1,24 @@
+@import '../../utils.scss';
+
+.single-news{
+    max-width: 50rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-inline: auto;
+
+    .single-news-image{
+        max-height: 50rem;
+        overflow: hidden;
+    }
+
+    .news-text{
+        p{
+            margin: 1rem 0;
+        }
+
+        a{
+            color: $color-dark;
+        }
+    }
+}

@@ -1,0 +1,239 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+$font-family: "Poppins", sans-serif;
+
+$color-white: #fff;
+$color-dark: #333;
+
+$color-grey: #eee;
+$box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
+
+$color-primary: #1f93ff;
+$color-primary-light: rgba(31, 147, 255,0.5);
+$color-primary-lighter: rgba(31, 147, 255,0.1);
+
+$color-red: #ec0606;
+$color-red-light: rgba(236, 6, 6, 0.5);
+$color-red-lighter: rgba(236, 6, 6, 0.1);
+
+$color-yellow-lighter: rgb(255, 177, 22, 0.25);
+
+
+$container-width-lg: 88%;
+$container-width-md: 94%;
+$form-width: 50%;
+$transition: all 300ms ease;
+$radius-1: 0.3rem;
+$radius-2: 0.6rem;
+$radius-3: 1rem;
+$radius-4: 2rem;
+
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: $font-family;
+    background: $color-white;
+}
+
+.container{
+    width: $container-width-lg;
+    max-width: 1920px;
+    margin-inline: auto;
+}
+
+h1,h2,h3,h4,h5{
+    line-height: 1.2;
+}
+
+h1{
+    font-size: 2.5rem;
+}
+
+h2{
+    font-size: 2rem;
+}
+
+img{
+    display: block;
+    object-fit: cover;
+    width: 100%;
+}
+
+a{
+    color: $color-white;
+}
+
+a:hover{
+    color: $color-red;
+}
+
+.btn{
+    color: $color-white;
+    display: block;
+    float: left;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 0.6rem 1.5rem;
+    background: $color-primary;
+    border-radius: $radius-1;
+    transition: $transition;
+}
+
+.btn:hover{
+    background: $color-primary-light; 
+    color: $color-dark;
+}
+
+.btn.lg{
+    padding: 1.1rem 2.5rem;
+    border-radius: 2rem;
+    font-size: 1.1rem;
+}
+
+.btn.sm{
+    padding: 0.4rem 1.2rem;
+    font-size: 0.9rem;
+}
+
+section{
+    padding: 5rem 0;
+}
+
+.header{
+    margin-top: 2.5rem;
+    min-height: calc(100vh - 2.5rem);
+}
+
+.card{
+    background: $color-white;
+    box-shadow: $box-shadow;
+    border-radius: $radius-2;
+    padding: .6rem .6rem 1rem .6rem;
+
+    .doctor{
+        .image{
+            height: 15rem;
+            border-radius: $radius-2;
+            overflow: hidden;
+            
+            img{
+                height: 100%;
+            }
+        }
+
+        h3{
+            margin-top: .5rem;
+        }
+
+        .buttons{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-top: .5rem;
+            gap: .5rem;
+
+            .category{
+                background: $color-primary-lighter;
+                color: $color-primary;
+            }
+
+            div{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: .1rem;
+            }
+        }
+
+        p{
+            margin-top: .5rem;
+        }
+
+        button{
+            background: $color-red-lighter;
+            color: $color-red;
+            font-weight: 600;
+            padding: .5rem;
+            border-radius: $radius-1;
+        }
+
+        button.closed{
+            background: $color-red;
+            color: $color-white;
+        }
+
+        button.open{
+           background: $color-primary;
+           color: $color-white; 
+        }
+    }
+}
+
+.blog-author{
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+
+    h4{
+        color: $color-primary;
+    }
+
+    .image{
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 2px solid $color-primary;
+
+        img{
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+.react-tabs__tab {
+    position: unset;
+}
+
+.react-tabs__tab--selected{
+    background: $color-primary;
+    border-color: $color-primary;
+    color: $color-white;
+}
+
+.react-tabs__tab-list{
+    border-bottom-color: $color-grey;
+}
+
+
+
+@media (max-width: 1100px){
+    h1{
+        font-size: 2rem;
+    }
+    
+    h2{
+        font-size: 1.5rem;
+    }
+
+    .container{
+        width: $container-width-md;
+    }
+
+    .header{
+        margin-top: 1rem;
+    }
+}
+

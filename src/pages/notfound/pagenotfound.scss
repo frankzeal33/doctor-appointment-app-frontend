@@ -1,0 +1,24 @@
+@import '../../utils';
+
+.notfound-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    img{
+        width: 21rem;
+        aspect-ratio: 1/1;
+    }
+}
+
+@media (max-width: 600px) {
+    .notfound-container{
+    
+        img{
+            width: 16rem;
+            aspect-ratio: 1/1;
+        }
+    }
+}

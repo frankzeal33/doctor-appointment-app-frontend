@@ -1,0 +1,519 @@
+@import '../../utils';
+
+.booking{
+    display: grid;
+    grid-template-columns: 65% 1fr;
+    align-items: flex-start;
+    gap: 5rem;
+
+    .left-container{
+
+        .booking-info{
+            display: flex;
+            gap: 1rem;
+    
+            .book-image{
+                width: 12rem;
+                aspect-ratio: 1/1;
+                border-radius: $radius-2;
+                overflow: hidden;
+                border: 1px solid $color-primary;
+    
+                img{
+                    height: 100%;
+                }
+            }
+
+            .profile-image{
+                position: relative;
+
+                .avatar-input{
+                    display: none;
+                }
+
+                .change-img{
+                    position: absolute;
+                    background: $color-primary;
+                    color: $color-white;
+                    font-size: 2.5rem;
+                    border-radius: 0 $radius-2 0 $radius-1;
+                    cursor: pointer;
+                    padding: .5rem;
+                    left: 0;
+                    bottom: 0;
+                    z-index: 3;
+
+                    &:hover{
+                        background: $color-red;
+                    }
+                }
+
+                .img-light{
+                    background: $color-dark;
+                }
+            }
+
+            button{
+                background: $color-primary-lighter;
+                color: $color-primary;
+                font-weight: 800;
+                padding: .5rem;
+                border-radius: $radius-1;
+                margin: .3rem 0;
+            }
+
+            .review{
+                display: flex;
+                align-items: center;
+                gap: .2rem;
+            }
+
+            h4{
+                margin: .5rem 0;
+            }
+
+            h5{
+                margin-bottom: .3rem;
+            }
+
+            p{
+                span{
+                    color: $color-primary;
+                    &.cancelled{
+                        color: $color-red;
+                    }
+                }
+            }
+
+            .socials{
+                display: flex;
+                align-items: center;
+                gap: .5rem;
+                margin-top: .5rem;
+
+                a{
+                    color: $color-dark;
+                    font-size: 1.5rem;
+                }
+            }
+        }
+
+        .contents{
+            .tabs{
+                width: 100%;
+                border-bottom: 1px solid $color-grey;
+                margin-top: 2.5rem;
+                display: flex;
+                align-items: center;
+                gap: .2rem;
+                font-weight: 550;
+    
+                .tab{
+                    padding: .5rem;
+                    cursor: pointer;
+    
+                    &.active-tab{
+                        background: $color-primary;
+                    }
+                    
+                }
+            }
+
+            .content{
+                margin-top: 1rem;
+                display: none;
+
+                .info{
+                    padding: .5rem;
+                    background: $color-yellow-lighter;
+                    border-radius: $radius-1;
+                    font-size: 0.8rem;
+                    margin-top: .5rem;
+                }
+
+                h3{
+                    span{
+                        color: $color-primary;
+                    }
+                }
+
+                .about-desc{
+                    margin-top: 1rem;
+                }
+
+                .education{
+                    margin: 2rem 0;
+                    div{
+                        margin-top: 1rem;
+
+                        h4:first-child{
+                            color: $color-primary;
+                        }
+                    }
+                }
+
+                .experience{
+                    &-boxes{
+                        display: grid;
+                        grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+                        gap: 2rem;
+                        margin-top: 1rem;
+
+                        .box{
+                            background: $color-primary-lighter;
+                            padding: 1rem;
+                            border-radius: $radius-1;
+
+                            h4:first-child{
+                                color: $color-primary;
+                            }
+                        }
+                    }
+                }
+
+                .review{
+                    border-bottom: 1px solid $color-grey;
+                    padding: 1rem 0;
+
+                    .review-box{
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        gap: 1rem;
+                        flex-wrap: wrap;
+
+                        .review-info{
+                            display: flex;
+                            align-items: center;
+                            gap: .6rem;
+                            margin-top: .6rem;
+
+                            h4{
+                                color: $color-primary;
+                            }
+
+                            .review-image{
+                                width: 3rem;
+                                height: 3rem;
+                                border-radius: 50%;
+                                overflow: hidden;
+                                border: 2px solid $color-primary;
+    
+                                img{
+                                    height: 100%;
+                                    object-fit: cover;
+                                }
+                            }
+                        }
+
+                        .stars{
+                            display: flex;
+                            align-items: center;
+                        }
+                    }
+                }
+
+                form{
+                    margin-bottom: 1rem;
+                    
+                    .form-container{
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: 1rem;
+                        align-items: center;
+    
+                        .input-field{
+                            input,select{
+                                width: 100%;
+                                border: 1px solid $color-grey;
+                                border-radius: $radius-1;
+                                padding: .5rem;
+                            }
+    
+                            input[type=file]{
+                                display: none;
+                            }
+    
+                            label{
+                                font-size: 1rem;
+            
+                                &.space{
+                                    padding-left: .1rem;
+                                }
+                            }
+            
+                            .photo{
+                                background: $color-primary;
+                                padding: .4rem;
+                                color: $color-white;
+                                border-radius: $radius-1;
+                                font-size: .8rem;
+                            }
+            
+                            .img-preview{
+                                width: 2.5rem;
+                                aspect-ratio: 1/1;
+                                border-radius: 50%;
+                                overflow: hidden;
+                                border: 2px solid $color-grey;
+            
+                                img{
+                                    object-fit: cover;
+                                    height: 100%; 
+                                }
+                            }
+    
+                        }
+    
+                        .box{
+                            display: flex;
+                            align-items: center;
+                            gap: .5rem;
+                        }
+                    }
+
+                    .button{
+                        align-self: flex-end;
+
+                        label{
+                            padding: .5rem;
+                            font-size: .8rem;
+                            cursor: pointer;
+                        }
+                    }
+                }
+                
+            }
+
+            .active-content{
+                display: block;
+            }
+
+            form{
+                margin-top: 1rem;
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+
+                textarea{
+                    border: 1px solid $color-dark;
+                    border-radius: $radius-1;
+                    resize: none;
+                    height: 5rem;
+                    padding: .5rem;
+
+                    &:focus{
+                        border-color: $color-primary;
+                    }
+                }
+
+                .profile-about{
+                    border: 1px solid $color-grey;
+                    height: 15rem;
+                }
+
+                button{
+                    width: fit-content;
+                    align-self: flex-end;
+                    background: $color-primary;
+                    color: $color-white;
+                    padding: .5rem;
+                    border-radius: $radius-1;
+                    cursor: pointer;
+
+                    &:hover{
+                        background: $color-primary-light;
+                        color: $color-dark;
+                    }
+                }
+            }
+        }
+    } 
+
+    .right-container{
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+
+        .booking-actions{
+            background: $color-white;
+            box-shadow: $box-shadow;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+            button{
+                background: $color-red;
+                border-radius: $radius-1;
+                color: $color-white;
+                padding: .6rem;
+                font-weight: 700;
+
+                &:hover{
+                    background: $color-red-light;
+                    color: $color-dark;
+                    cursor: pointer;
+                }
+            }
+
+            form{
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+
+                p{
+                    font-weight: 600;
+                    color: $color-primary;
+                }
+
+                input{
+                    border: 1px solid $color-dark;
+                    padding: .5rem;
+                    border-radius: $radius-1;
+                }
+
+                button{
+                    background: $color-primary;
+    
+                    &:hover{
+                        background: $color-primary-light;
+                    }
+                }
+            }
+
+        }
+
+        .messages{
+            background: $color-white;
+            box-shadow: $box-shadow;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            min-height: 17rem;
+            max-height: 30rem;
+            overflow-y: auto;
+
+            .message-header{
+                div, form{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: .5rem;
+
+                    input{
+                        width: 100%;
+                        border: 1px solid $color-primary;
+                        padding: .5rem;
+                        border-radius: $radius-1;
+                    }
+
+                    button{
+                        padding: .4rem;
+                        color: $color-white;
+                        background: $color-primary;
+                        border-radius: $radius-1;
+                        cursor: pointer;
+
+                        &:hover{
+                            background: $color-primary-lighter;
+                            color: $color-primary;
+                        }
+                    }
+                }
+
+            }
+
+            .message-body{
+                div{
+                    border-top: 1px solid $color-dark;
+                    padding: 1rem 0;
+                }
+
+                h5{
+                    color: $color-primary;
+                }
+            }
+        }
+
+    }
+}
+
+
+@media (max-width: 1000px){
+    .booking{
+        grid-template-columns: 60% 1fr;
+        gap: 3rem;
+    }
+}
+
+@media (max-width: 900px){
+    .booking{
+        grid-template-columns: 1fr;
+        gap: 3rem;
+
+        .left-container{
+
+            .contents{
+                .tabs{
+                    justify-content: center;
+                }
+            }
+        }
+
+        .right-container{
+            .booking-actions{
+                order: 2;
+            }
+
+            .messages{
+                order: 1;
+            }
+        }
+    }
+}
+
+@media(max-width: 550px){
+    .booking{
+    
+        .left-container{
+    
+            .booking-info{
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                .brief-info{
+                    text-align: center;
+
+                }
+
+                .review{
+                    justify-content: center;
+                }
+
+                .socials{
+                    justify-content: center;
+                }
+            }
+
+            .contents{
+                .tabs{
+                    font-size: .8rem;
+                }
+
+                .content{
+                    form{
+                        margin-bottom: 1rem;
+                        
+                        .form-container{
+                            grid-template-columns: 1fr;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
